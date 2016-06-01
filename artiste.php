@@ -7,6 +7,10 @@ class Artiste{
     $this->nomScene=($nomScene);
   }
   
+  function getIdArtiste(){
+    return $this->idArtiste;
+  }
+  
   function getNomScene(){
     return $this->nomScene;
   }
