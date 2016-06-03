@@ -7,9 +7,10 @@ class Router {
          "params" => array()
 	 );
       if( $query === "" || $query === "/" ) {
-         $result["controller"] = "Index";
-		 $result["action"] = "index";
-      } else {
+				$result["controller"] = "Index";
+		 		$result["action"] = "index";
+      } 
+		 else {
 		  $parts = explode("/", $query);
 		  if($parts[0] == "contact")  {
 			  if (count($parts) == 1){
@@ -27,6 +28,35 @@ class Router {
 
 					  $result["controller"] = "Contact";
 					  $result["action"] = "afficherContact";
+					  $result["params"]["id"] = $parts[2];            
+				  }
+			  //
+
+			  if ((count($parts) == 3) && ($parts[1] == "modifier")){
+
+				  $result["controller"] = "Contact";
+				  $result["action"] = "modifierContact";
+				  $result["params"]["id"]= $parts[2];
+				  $result["params"]["post"]= $_POST;
+			  }
+			  //
+		  }
+			 if($parts[0] == "artiste")  {
+			  if (count($parts) == 1){
+				  $result["controller"] = "Artiste";
+				  $result['action'] = "afficherListe";
+			  }
+			  if ((count($parts) == 2) && ($parts[1] == "afficher")){
+            $result["controller"] = "Artiste";
+            $result["action"] = "afficherListe";
+            //$result["params"]["slug"] = $parts[1];            
+			  }
+			  if ( (count($parts) == 3) 
+				  && ($parts[1] == "afficher")
+				  && ($parts[0] == "artiste")){
+
+					  $result["controller"] = "Artiste";
+					  $result["action"] = "afficherArtistes";
 					  $result["params"]["id"] = $parts[2];            
 				  }
 			  //
