@@ -1,35 +1,37 @@
 <?php
 
-class Artiste extends Model {
-  public $idArtiste, $nomScene;
+class Album extends Model {
+  public $idAlbum, $titre, $annee, $genre;
 	public static function setFromId( $id,$data ) {                                                                                                  
 		$db = Database::getInstance();
-		$sql = "UPDATE Artiste set nomScene=:nomScene WHERE idArtiste = :id";
+		$sql = "UPDATE Album set titre=:titre,annee=:annee,genre=:genre WHERE idAlbum = :id";
 		$stmt = $db->prepare($sql);
 		//$stmt->setFetchMode(PDO::FETCH_CLASS, "Contact");
 		return $stmt->execute(array(
-			":id" => $idArtiste,
-			":nom"=>$data['nomScene']));
+			":id" => $idAlbum,
+			":titre"=>$data['titre'],
+      ":annee"=>$data['annee'],
+      ":genre"=>$data['genre']));
 		//return $stmt->fetch();
 	}
 	public function toHTML()
 	{
-		return ($this->nomScene);
+		return ($this->titre)." ".($this->annee)." ".($this->genre);
 	}
 	public static function getFromId( $id ) {
 		$db = Database::getInstance();
-		$sql = "SELECT * FROM Artiste WHERE idArtiste = :id";
+		$sql = "SELECT * FROM Album WHERE idAlbum = :id";
 		$stmt = $db->prepare($sql);
-		$stmt->setFetchMode(PDO::FETCH_CLASS, "Artiste");
-		$stmt->execute(array(":id" => $idArtiste));
+		$stmt->setFetchMode(PDO::FETCH_CLASS, "Album");
+		$stmt->execute(array(":id" => $idAlbum));
 		return $stmt->fetch();
 	}
 
 	public static function getList() {
 		$db = Database::getInstance();
-		$sql = "SELECT * FROM Artiste";
+		$sql = "SELECT * FROM Album";
 		$stmt = $db->query($sql);
-		$stmt->setFetchMode(PDO::FETCH_CLASS, "Artiste");
+		$stmt->setFetchMode(PDO::FETCH_CLASS, "Albu");
 		return $stmt->fetchAll();
 	}
 }
