@@ -31,7 +31,7 @@ class Album extends Model {
 		$db = Database::getInstance();
 		$sql = "SELECT * FROM Album";
 		$stmt = $db->query($sql);
-		$stmt->setFetchMode(PDO::FETCH_CLASS, "Albu");
+		$stmt->setFetchMode(PDO::FETCH_CLASS, "Album");
 		return $stmt->fetchAll();
 	}
 }
