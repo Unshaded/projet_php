@@ -4,7 +4,7 @@
 		<meta charset="utf-8"/>
 	<link href="<?php echo BASE_URL.'/css/bootstrap.css';?>" rel="stylesheet" />
 
-		<title>Albums</title>
+		<title>ZikWorld</title>
 	</head>
 	<body>
 		<div class="container">
@@ -17,7 +17,8 @@
 				<h3 class="muted"><a href="<?php echo BASE_URL;?>">ZikWorld</a></h3>
 			</h3>
 			</div>
-			<h1>Listes des albums</h1>
+		<h1>Listes des albums</h1><br>
+		<a href='<?php echo BASE_URL."/album/ajouter/".$album->id;?>'class="btn btn-info">Ajouter</a><br>
 			<table class="table table-stripped">
 				<thead>
 					<tr>

@@ -9,7 +9,7 @@ class AlbumController extends Controller {
 	}
 	public function afficherAlbum() {
 		$id = $this->route["params"]["id"];
-		$this->view->contact = Album::getFromId($id);
+		$this->view->album = Album::getFromId($id);
 		$this->view->display();
 	}
 }
