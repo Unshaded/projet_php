@@ -98,7 +98,7 @@ class Router {
 				  $result["params"]["post"]= $_POST;
 			  }
 				//
-				
+			}
 				if($parts[0] == "connexion")  {
 			  if (count($parts) == 1){
 				  $result["controller"] = "Connexion";
@@ -133,4 +133,5 @@ class Router {
 	  return $result;
    }
 }
+
 ?>
