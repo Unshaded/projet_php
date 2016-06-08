@@ -14,36 +14,40 @@
 				<li> <a href="<?php echo BASE_URL.'/contact';?>">Liste des contacts</a></li>
 				<li> <a href="<?php echo BASE_URL.'/artiste';?>">Liste des artistes</a></li>
 				<li> <a href="<?php echo BASE_URL.'/album';?>">Liste des albums</a></li>
+				<li> <a href="<?php echo BASE_URL.'/connexion';?>"> Connexion</a></li>
 			</ul>
-			<h3 class="muted"><a href="<?php echo BASE_URL;?>">ZikWorld</a></h3>
+			<h3 class="muted">ZikWorld
+			</h3>
 		</div>
 		<p class="lead">Bienvenue sur le blog n°1 de musiques !
 		</p>
 		<div class="connexion">
 			<h2>Connectez-vous</h2>
-			<form method="GET" action="Connexion.php">
+			<form method="GET" action="Connexion">
 				Login <br>
-				<input type="text" name="username"><br> Mot de passe<br>
-				<input type="text" name="password"><br>
+				<input type="text" name="username"><br> 
+				Mot de passe<br>
+				<input type="password" name="password"><br>
 				<input type="Submit" name="Connexion" <br>
 			</form>
 		</div>
 		<div class="inscription">
 			<h2>Inscrivez-vous</h2>
-			<form method="GET" action="Inscription.php">
+			<form method="GET" action="Inscription">
 				Login <br>
 				<input type="text" name="username"><br>
 				Mail<br>
 				<input type="text" name="email"><br>
 				Mot de passe<br>
-				<input type="text" name="password"><br>
+				<input type="password" name="password"><br>
 				Repetez le mot de passe<br>
-				<input type="text" name="password"><br>
+				<input type="password" name="password"><br>
 				<input type="Submit" name="Connexion" <br>
 			</form>
 		</div>
 		<hr>
 		<div class="text-center">
+			<a href="<?php echo BASE_URL;?>">page d'accueil</a>
 		</div>
 		</footer>
 	</div>
