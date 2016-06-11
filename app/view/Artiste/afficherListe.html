@@ -18,6 +18,7 @@
 				<h3 class="muted"><a href="<?php echo BASE_URL;?>">ZikWorld</a></h3>
 			</div>
 			<h1>Listes des artistes</h1>
+			<a href='<?php echo BASE_URL."/artiste/ajouter";?>'class="btn btn-info pull-right">Ajouter</a><br>
 			<table class="table table-stripped">
 				<thead>
 					<tr>
@@ -31,7 +32,7 @@
 							<?php echo $artiste->nomScene;?>
 						</td>
 						<td><a href='<?php echo BASE_URL."/artiste/afficher/".$artiste->idArtiste;?>' 
-								class="btn btn-info"><i class="icon icon-search"><i></a></td>
+								class="btn btn-info pull-right"><i class="icon icon-search"><i></a></td>
 					</tr>
 					<?php endforeach;?>
 				</tbody>

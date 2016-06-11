@@ -32,7 +32,7 @@ class Router {
 				  }
 			  //
 
-			  if ((count($parts) == 3) && ($parts[1] == "modifier")){
+			  if ((count($parts) == 2) && ($parts[1] == "modifier")){
 
 				  $result["controller"] = "Contact";
 				  $result["action"] = "modifierContact";
@@ -61,12 +61,10 @@ class Router {
 				  }
 			  //
 
-			  if ((count($parts) == 3) && ($parts[1] == "modifier")){
+			  if ((count($parts) == 2) && ($parts[1] == "ajouter")){
 
-				  $result["controller"] = "Contact";
-				  $result["action"] = "modifierContact";
-				  $result["params"]["id"]= $parts[2];
-				  $result["params"]["post"]= $_POST;
+				  $result["controller"] = "Artiste";
+				  $result["action"] = "ajouterArtiste";
 			  }
 			  //
 		  }

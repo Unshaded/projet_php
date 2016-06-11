@@ -12,5 +12,14 @@ class ArtisteController extends Controller {
 		$this->view->artiste = Artiste::getFromId($id);
 		$this->view->display();
 	}
+	
+	public function ajouterArtiste(){
+		$this->view->list = Artiste::getList();
+		$this->view->display();
+	}
+	
+	public function ajouter(){
+		
+	}
 }
 ?>
