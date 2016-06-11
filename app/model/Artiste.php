@@ -12,10 +12,7 @@ class Artiste extends Model {
 			":nom"=>$data['nomScene']));
 		//return $stmt->fetch();
 	}
-	public function toHTML()
-	{
-		return ($this->nomScene);
-	}
+
 	public static function getFromId( $id ) {
 		$db = Database::getInstance();
 		$sql = "SELECT * FROM Artiste WHERE idArtiste = :id";

@@ -14,10 +14,7 @@ class Album extends Model {
       ":genre"=>$data['genre']));
 		//return $stmt->fetch();
 	}
-	public function toHTML()
-	{
-		return ($this->titre)." ".($this->annee)." ".($this->genre);
-	}
+
 	public static function getFromId( $id ) {
 		$db = Database::getInstance();
 		$sql = "SELECT * FROM Album WHERE idAlbum = :id";

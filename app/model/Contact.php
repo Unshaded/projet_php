@@ -14,10 +14,7 @@ class Contact extends Model {
 			":email"=>$data['email']));
 		//return $stmt->fetch();
 	}
-	public function toHTML()
-	{
-		return ($this->prenom)." ".($this->nom);
-	}
+
 	public static function getFromId( $id ) {
 		$db = Database::getInstance();
 		$sql = "SELECT * FROM contacts WHERE id = :id";
