@@ -30,10 +30,9 @@
 						<td>
 							<?php echo $artiste->nomScene;?>
 						</td>
-						<td><a href='<?php echo BASE_URL."/artiste/afficher/".$artiste->id;?>' 
+						<td><a href='<?php echo BASE_URL."/artiste/afficher/".$artiste->idArtiste;?>' 
 								class="btn btn-info"><i class="icon icon-search"><i></a></td>
-							</tr>
-							<!--a href="contact/afficher/<?php echo $contact->id;?>"></a></td><td><?php echo $contact->prenom." ".$contact->nom;?></td></tr-->
+					</tr>
 					<?php endforeach;?>
 				</tbody>
 			</table>

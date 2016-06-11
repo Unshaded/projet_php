@@ -8,14 +8,17 @@
 <body>
 	<div class="container">
 		<div class="page-header">
-			<h1>Artiste <!--?php echo $this->contact->id;?--></h1>
+			<ul class="nav nav-pills pull-right">
+					<li> <a href="<?php echo BASE_URL.'/contact';?>">Liste des contacts</a></li>
+					<li> <a href="<?php echo BASE_URL.'/artiste';?>">Liste des artistes</a></li>
+					<li> <a href="<?php echo BASE_URL.'/album';?>">Liste des albums</a></li>
+			</ul>
+			<h3 class="muted"><a href="<?php echo BASE_URL;?>">ZikWorld</a></h3>
+			<h1><?php echo $this->artiste->nomScene; ?></h1>
 		</div>
-   <!--h2><?php echo $this->contact->toHTML();?></h2-->
-   <strong><?php echo ($this->artiste->nomScene)?></strong><br>
-		 <a href="look:#"><?php echo $this->artiste->nomScene; ?></a>
+   <strong></strong><br>
    <footer>
 	   <hr>
-	   <p class="text-center"><a href='<?php echo BASE_URL?>'>retour à la page d'acceuil</a></p>
    </footer>
    </div>
 </body>

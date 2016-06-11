@@ -15,7 +15,6 @@
 						<li> <a href="<?php echo BASE_URL.'/album';?>">Liste des albums</a></li>
 				</ul>
 				<h3 class="muted"><a href="<?php echo BASE_URL;?>">ZikWorld</a></h3>
-			</h3>
 			</div>
 		<h1>Listes des albums</h1><br>
 		<a href='<?php echo BASE_URL."/album/ajouter/".$album->id;?>'class="btn btn-info">Ajouter</a><br>
@@ -41,8 +40,7 @@
             </td>
 						<td><a href='<?php echo BASE_URL."/album/afficher/".$album->idAlbum;?>' 
 								class="btn btn-info"><i class="icon icon-search"><i></a></td>
-							</tr>
-							<!--a href="contact/afficher/<?php echo $contact->id;?>"></a></td><td><?php echo $contact->prenom." ".$contact->nom;?></td></tr-->
+					</tr>
 					<?php endforeach;?>
 				</tbody>
 			</table>

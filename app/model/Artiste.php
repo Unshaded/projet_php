@@ -18,7 +18,7 @@ class Artiste extends Model {
 		$sql = "SELECT * FROM Artiste WHERE idArtiste = :id";
 		$stmt = $db->prepare($sql);
 		$stmt->setFetchMode(PDO::FETCH_CLASS, "Artiste");
-		$stmt->execute(array(":id" => $idArtiste));
+		$stmt->execute(array(":id" => $id));
 		return $stmt->fetch();
 	}
 
