@@ -23,7 +23,7 @@ class Album extends Model {
 		$sql = "SELECT * FROM Album WHERE idAlbum = :id";
 		$stmt = $db->prepare($sql);
 		$stmt->setFetchMode(PDO::FETCH_CLASS, "Album");
-		$stmt->execute(array(":id" => $idAlbum));
+		$stmt->execute(array(":id" => $id));
 		return $stmt->fetch();
 	}
 
