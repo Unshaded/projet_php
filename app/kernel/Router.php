@@ -77,7 +77,7 @@ class Router {
 			  }
 			  if ((count($parts) == 2) && ($parts[1] == "afficher")){
             $result["controller"] = "Album";
-            $result["action"] = "afficherListe";
+            $result["action"] = "afficherAlbum";
             //$result["params"]["slug"] = $parts[1];            
 			  }
 			  if ( (count($parts) == 3) 
