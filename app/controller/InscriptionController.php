@@ -4,7 +4,7 @@ class InscriptionController extends Controller {
 	
 	public function ajouter() {
 		extract($_Post);
-		if($password == null || $email == null || username == null)
+		if($password == null || $email == null || $username == null)
       echo"Formulaire incomplet. Veuillez reessayer";
 		else
 			$dbh = Database::getInstance();
