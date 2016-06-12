@@ -20,11 +20,12 @@ class ArtisteController extends Controller {
 	
 	public function ajouter(){
 		extract($_POST);
-		echo $nomScene;
 		$dbh = Database::getInstance();
-		$stmt = $dbh->prepare("INSERT INTO Artiste (nomScene) VALUES (:nomScene)");
-		$stmt->bindParam(':nomScene', $nomScene);
-		$stmt->execute();
+		if(isset($nomScene)){
+			$stmt = $dbh->prepare("INSERT INTO Artiste (nomScene) VALUES (:nomScene);");
+			$stmt->bindValue(':nomScene', $nomScene);
+			$stmt->execute();
+		}
 	}
 }
 ?>

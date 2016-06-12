@@ -65,7 +65,9 @@ class Router {
 
 				  $result["controller"] = "Artiste";
 				  $result["action"] = "ajouterArtiste";
-			  }
+					$result["params"]["post"]= $_POST;
+				}
+				 
 			  //
 		  }
 			if($parts[0] == "album")  {
@@ -75,8 +77,7 @@ class Router {
 			  }
 			  if ((count($parts) == 2) && ($parts[1] == "afficher")){
             $result["controller"] = "Album";
-            $result["action"] = "afficherListe";
-            //$result["params"]["slug"] = $parts[1];            
+            $result["action"] = "afficherListe";            
 			  }
 			  if ( (count($parts) == 3) 
 				  && ($parts[1] == "afficher")
@@ -88,13 +89,11 @@ class Router {
 				  }
 			  //
 
-			  if ((count($parts) == 3) && ($parts[1] == "modifier")){
+			  if ((count($parts) == 2) && ($parts[1] == "ajouter")){
 
-				  $result["controller"] = "Contact";
-				  $result["action"] = "modifierContact";
-				  $result["params"]["id"]= $parts[2];
-				  $result["params"]["post"]= $_POST;
-			  }
+				  $result["controller"] = "Album";
+				  $result["action"] = "ajouterAlbum";
+				}
 				//
 			}
 				if($parts[0] == "connexion")  {

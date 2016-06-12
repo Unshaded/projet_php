@@ -20,15 +20,23 @@
 			</ul>
 			<h3 class="muted"><a href="<?php echo BASE_URL; ?>">ZikWorld</a></h3>
 		</div>
-		<form method="POST" action='<?php echo BASE_URL."/artiste/ajouter";?>'>
-			Nom
+		<form method="POST" action='<?php echo BASE_URL."/album/ajouter";?>'>
+			Titre
 			<br>
-			<input type="text" name="nomScene">
+			<input type="text" name="titre">
+			<br>
+      Annee
+      <br>
+			<input type="date" name="annee">
+			<br>
+      Genre
+      <br>
+			<input type="text" name="genre">
 			<br>
 			<input type="Submit" name="Ajouter">
       <br>
 		</form>
-		<?php ArtisteController::ajouter();?>
+		<?php AlbumController::ajouter();?>
 		<strong></strong>
 		<br>
 		<footer>

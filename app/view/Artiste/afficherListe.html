@@ -1,45 +1,52 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8"/>
+
+<head>
+	<meta charset="utf-8" />
 	<link href="<?php echo BASE_URL.'/css/bootstrap.css';?>" rel="stylesheet" />
 
-		<title>Artistes</title>
-	</head>
-	<body>
-		<div class="container">
-			<div class="page-header">
-					<ul class="nav nav-pills pull-right">
-						<li> <a href="<?php echo BASE_URL.'/contact';?>">Liste des contacts</a></li>
-						<li> <a href="<?php echo BASE_URL.'/artiste';?>">Liste des artistes</a></li>
-						<li> <a href="<?php echo BASE_URL.'/album';?>">Liste des albums</a></li>
-							</form> </li>
-				</ul>
-				<h3 class="muted"><a href="<?php echo BASE_URL;?>">ZikWorld</a></h3>
-			</div>
-			<h1>Listes des artistes</h1>
-			<a href='<?php echo BASE_URL."/artiste/ajouter";?>'class="btn btn-info pull-right">Ajouter</a><br>
-			<table class="table table-stripped">
-				<thead>
-					<tr>
-						<th>Nom</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php foreach($this->list as $artiste) : ?>
-					<tr>
-						<td>
-							<?php echo $artiste->nomScene;?>
-						</td>
-						<td><a href='<?php echo BASE_URL."/artiste/afficher/".$artiste->idArtiste;?>' 
-								class="btn btn-info pull-right"><i class="icon icon-search"><i></a></td>
-					</tr>
-					<?php endforeach;?>
-				</tbody>
-			</table>
-			<footer>
-				<hr>
-			</footer>
+	<title>Artistes</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="page-header">
+			<ul class="nav nav-pills pull-right">
+				<li> <a href="<?php echo BASE_URL.'/contact';?>">Liste des contacts</a>
+				</li>
+				<li> <a href="<?php echo BASE_URL.'/artiste';?>">Liste des artistes</a>
+				</li>
+				<li> <a href="<?php echo BASE_URL.'/album';?>">Liste des albums</a>
+				</li>
+				</form>
+				</li>
+			</ul>
+			<h3 class="muted"><a href="<?php echo BASE_URL;?>">ZikWorld</a></h3>
 		</div>
-	</body>
+		<h1>Listes des artistes</h1>
+		<a href='<?php echo BASE_URL."/artiste/ajouter";?>' class="btn btn-info pull-right">Ajouter</a>
+		<br>
+		<table class="table table-stripped">
+			<thead>
+				<tr>
+					<th>Nom</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php foreach($this->list as $artiste) : ?>
+				<tr>
+					<td>
+						<?php echo $artiste->nomScene;?>
+					</td>
+					<td><a href='<?php echo BASE_URL."/artiste/afficher/".$artiste->idArtiste;?>' class="btn btn-info pull-right"><i class="icon icon-search"><i></a></td>
+				</tr>
+				<?php endforeach;?>
+			</tbody>
+		</table>
+		<footer>
+			<hr>
+		</footer>
+	</div>
+</body>
+
 </html>

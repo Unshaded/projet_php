@@ -1,52 +1,59 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8"/>
+
+<head>
+	<meta charset="utf-8" />
 	<link href="<?php echo BASE_URL.'/css/bootstrap.css';?>" rel="stylesheet" />
 
-		<title>ZikWorld</title>
-	</head>
-	<body>
-		<div class="container">
-			<div class="page-header">
-					<ul class="nav nav-pills pull-right">
-						<li> <a href="<?php echo BASE_URL.'/contact';?>">Liste des contacts</a></li>
-						<li> <a href="<?php echo BASE_URL.'/artiste';?>">Liste des artistes</a></li>
-						<li> <a href="<?php echo BASE_URL.'/album';?>">Liste des albums</a></li>
-				</ul>
-				<h3 class="muted"><a href="<?php echo BASE_URL;?>">ZikWorld</a></h3>
-			</div>
-		<h1>Listes des albums</h1><br>
-		<a href='<?php echo BASE_URL."/album/ajouter/".$album->id;?>'class="btn btn-info pull-right">Ajouter</a><br>
-			<table class="table table-stripped">
-				<thead>
-					<tr>
-						<th>Titre</th>
-            <th>Annee</th>
-            <th>Genre</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php foreach($this->list as $album) : ?>
-					<tr>
-						<td>
-							<?php echo $album->titre;?>
-						</td>
-            <td>
-            <?php echo $album->annee;?>
-            </td>
-            <td>
-             <?php echo $album->genre;?>
-            </td>
-						<td><a href='<?php echo BASE_URL."/album/afficher/".$album->idAlbum;?>' 
-								class="btn btn-info pull-right"><i class="icon icon-search"><i></a></td>
-					</tr>
-					<?php endforeach;?>
-				</tbody>
-			</table>
-			<footer>
-				<hr>
-			</footer>
+	<title>ZikWorld</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="page-header">
+			<ul class="nav nav-pills pull-right">
+				<li> <a href="<?php echo BASE_URL.'/contact';?>">Liste des contacts</a>
+				</li>
+				<li> <a href="<?php echo BASE_URL.'/artiste';?>">Liste des artistes</a>
+				</li>
+				<li> <a href="<?php echo BASE_URL.'/album';?>">Liste des albums</a>
+				</li>
+			</ul>
+			<h3 class="muted"><a href="<?php echo BASE_URL;?>">ZikWorld</a></h3>
 		</div>
-	</body>
+		<h1>Listes des albums</h1>
+		<br>
+		<a href='<?php echo BASE_URL."/album/ajouter";?>' class="btn btn-info pull-right">Ajouter</a>
+		<br>
+		<table class="table table-stripped">
+			<thead>
+				<tr>
+					<th>Titre</th>
+					<th>Annee</th>
+					<th>Genre</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php foreach($this->list as $album) : ?>
+				<tr>
+					<td>
+						<?php echo $album->titre;?>
+					</td>
+					<td>
+						<?php echo $album->annee;?>
+					</td>
+					<td>
+						<?php echo $album->genre;?>
+					</td>
+					<td><a href='<?php echo BASE_URL."/album/afficher/".$album->idAlbum;?>' class="btn btn-info pull-right"><i class="icon icon-search"><i></a></td>
+				</tr>
+				<?php endforeach;?>
+			</tbody>
+		</table>
+		<footer>
+			<hr>
+		</footer>
+	</div>
+</body>
+
 </html>

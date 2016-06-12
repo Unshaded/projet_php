@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-   <meta charset="utf-8"/>
-   <title>Album</title>
-   <link href='<?php echo BASE_URL."/css/bootstrap.css";?>' rel="stylesheet" />
+	<meta charset="utf-8" />
+	<title>ZikWorld</title>
+	<link href='<?php echo BASE_URL."/css/bootstrap.css";?>' rel="stylesheet" />
 </head>
+
 <body>
 	<div class="container">
 		<div class="page-header">
 			<ul class="nav nav-pills pull-right">
-					<li> <a href="<?php echo BASE_URL.'/contact';?>">Liste des contacts</a></li>
-					<li> <a href="<?php echo BASE_URL.'/artiste';?>">Liste des artistes</a></li>
-					<li> <a href="<?php echo BASE_URL.'/album';?>">Liste des albums</a></li>
+				<li> <a href="<?php echo BASE_URL.'/contact';?>">Liste des contacts</a>
+				</li>
+				<li> <a href="<?php echo BASE_URL.'/artiste';?>">Liste des artistes</a>
+				</li>
+				<li> <a href="<?php echo BASE_URL.'/album';?>">Liste des albums</a>
+				</li>
 			</ul>
 			<h3 class="muted"><a href="<?php echo BASE_URL;?>">ZikWorld</a></h3>
 			<h1> <?php echo $this->album->titre; ?></h1>
 		</div>
-  <strong>Annee: <?php echo ($this->album->annee);?><br>
-	Genre: <?php echo($this->album->genre); ?></strong><br>
-   <footer>
-	   <hr>
-   </footer>
-   </div>
+		<strong>Annee: <?php echo ($this->album->annee);?><br>
+	Genre: <?php echo($this->album->genre); ?></strong>
+		<br>
+		<footer>
+			<hr><p class="text-center"><a href="<?php echo BASE_URL.'/album';?>">Retour a la liste</a></p>
+		</footer>
+	</div>
 </body>
+
 </html>
