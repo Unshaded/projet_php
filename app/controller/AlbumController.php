@@ -12,5 +12,13 @@ class AlbumController extends Controller {
 		$this->view->album = Album::getFromId($id);
 		$this->view->display();
 	}
+	public function ajouter(){
+		extract($_POST);
+		$dbh = Database::getInstance();
+		$stmt = $dbh->prepare("INSERT INTO Album (titre, annee, genre) VALUES (:titre, :annee, :genre)");
+		$stmt->bindParam(':titre', $titre);
+		$stmt->bindParam(':annee', $annee);
+		$stmt->bindParam(':genre', $genre);
+	}
 }
 ?>

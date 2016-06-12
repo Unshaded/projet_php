@@ -3,28 +3,28 @@
   <head>
      <meta charset="utf-8"/>
      <title>ZikWorld</title>
-     <link href='<?php echo BASE_URL."/css/bootstrap.css";?>' rel="stylesheet" />
+     <link href='<?php echo BASE_URL."/css/bootstrap.css"; ?>' rel="stylesheet" />
   </head>
   <body>
     <div class="container">
       <div class="page-header">
         <ul class="nav nav-pills pull-right">
-            <li> <a href="<?php echo BASE_URL.'/contact';?>">Liste des contacts</a></li>
-            <li> <a href="<?php echo BASE_URL.'/artiste';?>">Liste des artistes</a></li>
-            <li> <a href="<?php echo BASE_URL.'/album';?>">Liste des albums</a></li>
+            <li> <a href="<?php echo BASE_URL.'/contact'; ?>">Liste des contacts</a></li>
+            <li> <a href="<?php echo BASE_URL.'/artiste'; ?>">Liste des artistes</a></li>
+            <li> <a href="<?php echo BASE_URL.'/album'; ?>">Liste des albums</a></li>
         </ul>
-        <h3 class="muted"><a href="<?php echo BASE_URL;?>">ZikWorld</a></h3>
+        <h3 class="muted"><a href="<?php echo BASE_URL; ?>">ZikWorld</a></h3>
       </div>
         <form method="POST" action="ajouterArtiste.html">
          Nom<br>
          <input type="text" name="nomScene"><br>
          <input type="Submit" name="Ajouter"<br>
        </form>
-     <?php ArtisteController::ajouter(); ?>
-     <strong></strong><br>
-     <footer>
-       <hr>
-     </footer>
-    </div>
+       <?php ArtisteController::ajouter();?>
+       <strong></strong><br>
+       <footer>
+        <hr>
+       </footer>
+      </div>
   </body>
 </html>

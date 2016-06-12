@@ -18,10 +18,13 @@ class ArtisteController extends Controller {
 		$this->view->display();
 	}
 	
-	public function ajouter(extract($_POST[$nomScene])){
+	public function ajouter(){
+		extract($_POST);
+		echo $nomScene;
 		$dbh = Database::getInstance();
 		$stmt = $dbh->prepare("INSERT INTO Artiste (nomScene) VALUES (:nomScene)");
 		$stmt->bindParam(':nomScene', $nomScene);
+		$stmt->execute();
 	}
 }
 ?>
