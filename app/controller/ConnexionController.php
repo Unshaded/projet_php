@@ -1,20 +1,16 @@
 <?php
 
-class ConnexionController extends Controller {
+class InscriptionController extends Controller {
 	
-	public function equals() {
-		extract($_GET);
-    if($password == null)
-      return 0;
-    else {
-      if($this -> password == null)
-      return 4;
-      else{
-        if($this -> password != $password)
-      return 2;
-        else
-      return 1
-      }
+	public function connect() {
+		extract($_Post);
+		if($password == null || $username == null)
+      echo"Formulaire incomplet. Veuillez reessayer";
+		else{
+			$dbh = Database::getInstance();
+			$stmt = $dbh->prepare("Select password from User where username == :username;");
+			$stmt->bindParam(':username', $username);
+			$returnedPassword = $stmt->execute();
     }
   }
 }

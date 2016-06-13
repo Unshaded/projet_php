@@ -21,31 +21,23 @@
 		</div>
 		<p class="lead">Bienvenue sur le blog n°1 de musiques !
 		</p>
+		<h5> Si vous n'êtes pas encore inscrit : </h5>
+		<h2><a href="<?php echo BASE_URL.'/inscription';?>">Inscrivez-vous</h2></a><br>
+		<h5>Ou alors : </h5>
 		<div class="connexion">
 			<h2>Connectez-vous</h2>
-			<form method="GET" action="Connexion">
+			<form method="POST" action="<?php echo BASE_URL.'/connexion';?>">
 				Login <br>
 				<input type="text" name="username"><br> 
 				Mot de passe<br>
 				<input type="password" name="password"><br>
 				<input type="Submit" name="Connexion" <br>
 			</form>
-		</div>
 		<div class="inscription">
-			<h2>Inscrivez-vous</h2>
-			<form method="GET" action="Inscription">
-				Login <br>
-				<input type="text" name="username"><br>
-				Mail<br>
-				<input type="text" name="email"><br>
-				Mot de passe<br>
-				<input type="password" name="password"><br>
-				Repetez le mot de passe<br>
-				<input type="password" name="password"><br>
-				<input type="Submit" name="Connexion" <br>
-			</form>
-		</div>
 		<hr>
+		<div class="text-center">
+			<a href="<?php echo BASE_URL;?>">page d'accueil</a>
+		</div>
 		</footer>
 	</div>
 </body>

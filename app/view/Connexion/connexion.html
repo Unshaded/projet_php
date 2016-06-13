@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>ZikWorld</title>
+	<link href='<?php echo BASE_URL."/css/bootstrap.css"; ?>' rel="stylesheet" />
+</head>
+
+<body>
+	<div class="container">
+		<div class="page-header">
+			<ul class="nav nav-pills pull-right">
+				<li> <a href="<?php echo BASE_URL.'/contact'; ?>">Liste des contacts</a>
+				</li>
+				<li> <a href="<?php echo BASE_URL.'/artiste'; ?>">Liste des artistes</a>
+				</li>
+				<li> <a href="<?php echo BASE_URL.'/album'; ?>">Liste des albums</a>
+				</li>
+			</ul>
+			<h3 class="muted"><a href="<?php echo BASE_URL; ?>">ZikWorld</a></h3>
+		</div>
+		<h2>
+			 Connexion
+		</h2>
+     <?php ConnexionController::connect();
+    if($returnedPassword == null)
+        echo"Login introuvable";
+      else{
+        if($returnedPassword != $password)
+          echo"Mot de passe incorrect";
+        else{
+          if($returnedPassword == $password)
+            echo"Connexion reussie";
+        }
+      }
+     ?>
+		<br>
+		<footer>
+			<hr>
+		</footer>
+	</div>
+</body>
+
+</html>

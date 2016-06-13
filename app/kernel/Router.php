@@ -96,11 +96,17 @@ class Router {
 				}
 				//
 			}
+			 if($parts[0] == "inscription")  {
+				  $result["controller"] = "Inscription";
+				  $result['action'] = "inscription";
+			  }
+			  //
+			 
+			 
 				if($parts[0] == "connexion")  {
-			    $result["controller"] = "Connexion";
+				  $result["controller"] = "Connexion";
 				  $result['action'] = "connexion";
-			  		  }
-
+				}
 	  }
 	  return $result;
    }
