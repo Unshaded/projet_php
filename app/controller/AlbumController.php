@@ -15,6 +15,7 @@ class AlbumController extends Controller {
 	
 	public function ajouterAlbum(){
 		$this->view->list = Album::getList();
+		$this->view->listArtist=Artiste::getList();
 		$this->view->display(); 
 	}
 	

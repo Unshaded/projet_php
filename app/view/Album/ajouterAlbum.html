@@ -28,7 +28,9 @@
 			Artiste
 			<br>
 			<select name="artiste">
-				<?php AlbumController::artiste();?>
+				<?php foreach ($this->listArtist as $result):?>
+				<option><?php echo $result->nomScene;?></option>
+				<?php endforeach;?>
 			</select>
 			<br>
       Annee
