@@ -29,16 +29,5 @@ class AlbumController extends Controller {
 		$stmt->bindParam(':genre', $genre);
 		$stmt->execute();
 	}
-	
-	public function artiste(){
-		$dbh = Database::getInstance();
-		$stmt = $dbh->prepare("SELECT * FROM Artiste where nomScene = ?;");
-		if ($stmt->execute(array($_GET['nomScene']))) {
-			while ($row = $stmt->fetch()) {
-				//echo"<option>".$row['nomScene']."</option>";
-				print_r($row);
-  		}
-		}
-	}
 }
 ?>

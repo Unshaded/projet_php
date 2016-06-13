@@ -29,7 +29,7 @@
 			<br>
 			<select name="artiste">
 				<?php foreach ($this->listArtist as $result):?>
-				<option><?php echo $result->nomScene;?></option>
+				<option value="<?php echo $result->idArtiste.'">'.$result->nomScene?></option>
 				<?php endforeach;?>
 			</select>
 			<br>
@@ -48,7 +48,7 @@
 		<strong></strong>
 		<br>
 		<footer>
-			<hr>
+			<hr><p class="text-center"><a href="<?php echo BASE_URL.'/album';?>">Retour a la liste</a></p>
 		</footer>
 	</div>
 </body>
