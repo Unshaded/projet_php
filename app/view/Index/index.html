@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -14,6 +15,12 @@
 				<li> <a href="<?php echo BASE_URL.'/contact';?>">Liste des contacts</a></li>
 				<li> <a href="<?php echo BASE_URL.'/artiste';?>">Liste des artistes</a></li>
 				<li> <a href="<?php echo BASE_URL.'/album';?>">Liste des albums</a></li>
+				<?php if(isset($_SESSION['pseudo'])){
+					echo "<li> Bienvenue ";
+					echo $_SESSION['pseudo'];
+					echo'</li>';
+				}
+				?>
 			</ul>
 			<h3 class="muted">ZikWorld
 			</h3>
@@ -27,9 +34,9 @@
 			<h2>Connectez-vous</h2>
 			<form method="POST" action="<?php echo BASE_URL.'/connexion';?>">
 				Login <br>
-				<input type="text" name="username"><br> 
+				<input type="text" name="login"><br> 
 				Mot de passe<br>
-				<input type="password" name="password"><br>
+				<input type="password" name="mdp"><br>
 				<input type="Submit" name="Connexion" <br>
 			</form>
 		<div class="inscription">

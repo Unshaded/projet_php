@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -23,18 +24,7 @@
 		<h2>
 			 Connexion
 		</h2>
-     <?php ConnexionController::connect();
-    if($returnedPassword == null)
-        echo"Login introuvable";
-      else{
-        if($returnedPassword != $password)
-          echo"Mot de passe incorrect";
-        else{
-          if($returnedPassword == $password)
-            echo"Connexion reussie";
-        }
-      }
-     ?>
+     <?php ConnexionController::connect();?>
 		<br>
 		<footer>
 			<hr>

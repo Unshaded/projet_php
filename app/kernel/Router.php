@@ -102,7 +102,6 @@ class Router {
 			  }
 			  //
 			 
-			 
 				if($parts[0] == "connexion")  {
 				  $result["controller"] = "Connexion";
 				  $result['action'] = "connexion";
