@@ -28,14 +28,17 @@
 			<h3 class="muted"><a href="<?php echo BASE_URL; ?>">ZikWorld</a></h3>
 		</div>
 		<form method="POST" action='<?php echo BASE_URL."/artiste/ajouter";?>'>
-			Nom
-			<br>
-			<input type="text" name="nomScene">
-			<br>
-			<input type="Submit" name="Ajouter">
-      <br>
+			<?php if(isset($_SESSION['pseudo'])){
+			echo 'Nom';
+			echo '<input type="text" name="nomScene">';
+			echo '<input type="Submit" name="Ajouter">';
+			ArtisteController::ajouter();
+		}
+		else {
+	echo "Vous ne pouvez pas ajouter d'artiste car vous n'etes pas connecté.";
+}
+			?>
 		</form>
-		<?php ArtisteController::ajouter();?>
 		<strong></strong>
 		<br>
 		<footer>

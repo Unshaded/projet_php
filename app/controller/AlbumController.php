@@ -22,9 +22,9 @@ class AlbumController extends Controller {
 	public function ajouter(){
 		extract($_POST);
 		$dbh = Database::getInstance();
-		$stmt = $dbh->prepare("INSERT INTO Album (titre, artiste, annee, genre) VALUES (:titre, :artiste, :annee, :genre);");
+		$stmt = $dbh->prepare("INSERT INTO Album (titre, nomScene, annee, genre) VALUES (:titre, :nomScene, :annee, :genre);");
 		$stmt->bindParam(':titre', $titre);
-		$stmt->bindParam(':artiste', $artiste);
+		$stmt->bindParam(':nomScene', $nomScene);
 		$stmt->bindParam(':annee', $annee);
 		$stmt->bindParam(':genre', $genre);
 		$stmt->execute();

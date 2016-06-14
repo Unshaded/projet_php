@@ -28,30 +28,24 @@
 			<h3 class="muted"><a href="<?php echo BASE_URL; ?>">ZikWorld</a></h3>
 		</div>
 		<form method="POST" action='<?php echo BASE_URL."/album/ajouter";?>'>
-			Titre
-			<br>
-			<input type="text" name="titre">
-			<br>
-			Artiste
-			<br>
-			<select name="artiste">
-				<?php foreach ($this->listArtist as $result):?>
-				<option value="<?php echo $result->idArtiste.'">'.$result->nomScene?></option>
-				<?php endforeach;?>
-			</select>
-			<br>
-      Annee
-      <br>
-			<input type="date" name="annee">
-			<br>
-      Genre
-      <br>
-			<input type="text" name="genre">
-			<br>
-			<input type="Submit" name="Ajouter">
-      <br>
-		</form>
-		<?php AlbumController::ajouter();?>
+			<?php if(isset($_SESSION['pseudo'])){
+			echo 'Titre<br>';
+			echo '<input type="text" name="titre"><br>';
+			echo 'Artiste<br>';
+			echo '<select name="artiste"><br>';
+				foreach ($this->listArtist as $result)
+				echo '<option value="'.$result->nomScene.'">'.$result->nomScene.'</option>';
+			echo '</select><br>';
+      echo 'Annee<br>';
+			echo '<input type="date" name="annee"><br>';
+      echo 'Genre<br>';
+			echo '<input type="text" name="genre"><br>';
+			echo '<input type="Submit" name="Ajouter">';
+			echo '</form>';
+			AlbumController::ajouter();
+			}
+			else
+				echo "Vous ne pouvez pas ajouter d'albums car vous n'êtes pas connecté."?>
 		<strong></strong>
 		<br>
 		<footer>
