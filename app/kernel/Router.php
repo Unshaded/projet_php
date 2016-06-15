@@ -106,6 +106,10 @@ class Router {
 				  $result["controller"] = "Connexion";
 				  $result['action'] = "connexion";
 				}
+			 if($parts[0] == "apropos"){
+				 $result["controller"] ="Apropos";
+				 $result["action"]="apropos";
+			 }
 	  }
 	  return $result;
    }
