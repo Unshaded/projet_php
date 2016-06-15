@@ -24,7 +24,7 @@ class AlbumController extends Controller {
 		$dbh = Database::getInstance();
 		$stmt = $dbh->prepare("INSERT INTO Album (titre, idArtiste, annee, genre) VALUES (:titre, :idArtiste, :annee, :genre);");
 		$stmt->bindParam(':titre', $titre);
-		$stmt->bindParam(':idArtiste', $idArtiste);
+		$stmt->bindParam(':idArtiste', $artiste);
 		$stmt->bindParam(':annee', $annee);
 		$stmt->bindParam(':genre', $genre);
 		$stmt->execute();

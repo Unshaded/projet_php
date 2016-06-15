@@ -30,7 +30,11 @@
 		<form method="POST" action='<?php echo BASE_URL."/artiste/ajouter";?>'>
 			<?php if(isset($_SESSION['pseudo'])){
 			echo 'Nom';
-			echo '<input type="text" name="nomScene">';
+			echo '<input type="text" name="nomScene"><br>';
+			echo 'Naissance';
+			echo '<input type="date" name="naissance"><br>';
+			echo 'Biographie';
+			echo '<input type=1"text" name="bio"><br>';
 			echo '<input type="Submit" name="Ajouter">';
 			ArtisteController::ajouter();
 		}

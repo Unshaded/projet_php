@@ -1,16 +1,16 @@
 <?php
 
 class Artiste extends Model {
-  public $idArtiste, $nomScene;
+  public $idArtiste, $nomScene, $bio, $naissance;
 	public static function setFromId( $id,$data ) {                                                                                                  
 		$db = Database::getInstance();
-		$sql = "UPDATE Artiste set nomScene=:nomScene WHERE idArtiste = :id";
+		$sql = "UPDATE Artiste set nomScene=:nomScene, biographie=:bio, naissance=:naissance WHERE idArtiste = :id";
 		$stmt = $db->prepare($sql);
-		//$stmt->setFetchMode(PDO::FETCH_CLASS, "Contact");
 		return $stmt->execute(array(
 			":id" => $idArtiste,
-			":nom"=>$data['nomScene']));
-		//return $stmt->fetch();
+			":nom"=>$data['nomScene'],
+			":bio"=>$data['bio'],
+			":naissance"=>$data['naissance']));
 	}
 
 	public static function getFromId( $id ) {

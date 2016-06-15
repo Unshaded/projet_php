@@ -17,7 +17,7 @@ class Album extends Model {
 
 	public static function getFromId( $id ) {
 		$db = Database::getInstance();
-		$sql = "SELECT * FROM Album WHERE idAlbum = :id";
+		$sql = "SELECT * FROM Album Al join Artiste Art on(Al.idArtiste = Art.idArtiste) WHERE idAlbum = :id";
 		$stmt = $db->prepare($sql);
 		$stmt->setFetchMode(PDO::FETCH_CLASS, "Album");
 		$stmt->execute(array(":id" => $id));

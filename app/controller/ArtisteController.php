@@ -22,8 +22,10 @@ class ArtisteController extends Controller {
 		extract($_POST);
 		$dbh = Database::getInstance();
 		if(isset($nomScene)){
-			$stmt = $dbh->prepare("INSERT INTO Artiste (nomScene) VALUES (:nomScene);");
+			$stmt = $dbh->prepare("INSERT INTO Artiste (nomScene, biographie, naissance) VALUES (:nomScene, :bio, :naissance);");
 			$stmt->bindValue(':nomScene', $nomScene);
+			$stmt->bindValue(':bio', $bio);
+			$stmt->bindValue(':naissance', $naissance);
 			$stmt->execute();
 		}
 	}
